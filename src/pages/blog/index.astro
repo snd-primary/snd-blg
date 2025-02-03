@@ -1,0 +1,15 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+//ブログ記事一覧ページ
+import { getCollection } from "astro:content";
+
+const allBlogPosts = await getCollection("blog");
+console.log(allBlogPosts);
+---
+
+<BlogLayout>
+	<h2>記事一覧ページ</h2>
+	<div>
+		{allBlogPosts.map((post) => <div>{post.data.title}</div>)}
+	</div>
+</BlogLayout>

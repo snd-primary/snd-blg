@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import { NAVIGATION_ITEMS } from "../constants/navigation";
+import headerLogo from "../images/brand/snd_logo.png";
+---
+
+<header>
+	<a>
+		<Image src={headerLogo} alt="snd-blog" width={70} height={70} />
+	</a>
+	<ul>
+		{
+			NAVIGATION_ITEMS.map((i) => (
+				<li>
+					<a href={i.path}>{i.label}</a>
+				</li>
+			))
+		}
+	</ul>
+</header>

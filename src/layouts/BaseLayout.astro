@@ -1,0 +1,27 @@
+---
+import { css } from "../../styled-system/css";
+import ThemeProvider from "../components/ThemeProvider.astro";
+import "../index.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<ThemeProvider />
+		<title>Base Layout</title>
+	</head>
+	<body
+		class={css({
+			bg: "bg.default",
+			color: "accent.default",
+			w: "full",
+			h: "full",
+		})}
+	>
+		<slot />
+	</body>
+</html>
