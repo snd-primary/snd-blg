@@ -2,13 +2,31 @@
 import { Image } from "astro:assets";
 import { NAVIGATION_ITEMS } from "../constants/navigation";
 import headerLogo from "../images/brand/snd_logo.png";
+import ThemeToggle from "./ThemeToggle.astro";
+import { css } from "../../styled-system/css";
 ---
 
-<header>
+<header
+	class={css({
+		display: "grid",
+		gridTemplateColumns: "repeat(3, 1fr)",
+		"& > *": {
+			w: "full",
+			maxWidth: "full",
+			h: "full",
+			maxHeight: "full",
+		},
+	})}
+>
 	<a>
 		<Image src={headerLogo} alt="snd-blog" width={70} height={70} />
 	</a>
-	<ul>
+	<ThemeToggle />
+	<ul
+		class={css({
+			display: "grid",
+		})}
+	>
 		{
 			NAVIGATION_ITEMS.map((i) => (
 				<li>

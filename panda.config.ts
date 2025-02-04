@@ -13,6 +13,7 @@ export default defineConfig({
 	// Files to exclude
 	exclude: [],
 
+	//theme切り替えのカスタム属性を定義
 	conditions: {
 		light: "[data-theme=light] &",
 		dark: "[data-theme=dark] &",

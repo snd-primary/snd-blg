@@ -1,5 +1,16 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import "../index.css";
+import { css } from "../../styled-system/css";
 ---
 
-<DefaultLayout />
+<DefaultLayout>
+	<h1
+		class={css({
+			fontSize: "2xl",
+			w: "full",
+		})}
+	>
+		トップページのコンテンツ
+	</h1>
+</DefaultLayout>

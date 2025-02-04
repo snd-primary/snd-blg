@@ -39,8 +39,10 @@
 	//ViewTransitions対応
 	document.addEventListener("astro:after-swap", () => setTheme(getUserPref()));
 
+	//  テーマ切り替えボタンのカスタムイベントをリッスン -> src/components/ThemeToggle.astro
 	document.addEventListener("theme-change", (e) => {
 		setTheme(e.detail.theme);
+		console.log("theme toggle clicked");
 	});
 
 	//prefers-color-schemeの変更をリッスン
